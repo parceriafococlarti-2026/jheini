@@ -18,6 +18,7 @@
     />
 
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="shortcut icon" href="assets/icons/favicon.svg" type="image/x-icon">
   </head>
   <body>
     <!-- ═══════════════════════════════════════════════════════════
@@ -139,30 +140,15 @@
       </div>
 
       <div class="hero-image-wrap">
-        <div class="hero-image-bg"></div>
-        <div class="hero-image-placeholder">
-          <div class="hero-img-icon">
-            <!-- Laser / beauty icon -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-              />
-            </svg>
-          </div>
-          <p>Foto profissional<br />da Jheini Pinheiro</p>
+        <div class="hero-image-bg">
+          <picture>
+            <source
+              media="(min-width: 600px) and (max-width: 1024px)"
+              srcset="assets/imgs/jheini-img-horiz.png"
+            />
+            <img src="assets/imgs/jheini-img.png" alt="Foto da Jheini" />
+          </picture>
         </div>
-
         <!-- Floating stat card -->
         <div class="hero-float-card">
           <div class="float-card-icon">
@@ -194,24 +180,8 @@
       <div class="container">
         <div class="sobre-grid">
           <div class="sobre-image-wrap fade-up">
-            <div class="sobre-image-frame">
-              <div class="hero-img-icon" style="width: 80px; height: 80px">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="38"
-                  height="38"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#C6A35A"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-              </div>
-              <p>Foto profissional<br />da Jheini Pinheiro</p>
+            <div class="sobre-image-bg">
+              <img src="assets/imgs/image.png" alt="Foto da Jheini" />
             </div>
             <div class="sobre-badge-float">
               <strong data-count="6" data-suffix="+">6+</strong>
@@ -507,22 +477,22 @@
           </div>
           <div class="publico-cards fade-up delay-2">
             <div class="publico-card">
-              <span class="p-icon">✨</span>
+              <img src="assets/icons/icons8-estrela-100.png" alt="Ícone de Estrela">
               <h4>Mulheres</h4>
               <p>Que buscam pele lisa, conforto e liberdade</p>
             </div>
             <div class="publico-card">
-              <span class="p-icon">💪</span>
+              <img src="assets/icons/icons8-estrela-100.png" alt="Ícone de Estrela 2">
               <h4>Homens</h4>
               <p>Que desejam praticidade e estética corporal</p>
             </div>
             <div class="publico-card">
-              <span class="p-icon">🌿</span>
+              <img src="assets/icons/icons8-estrela-100.png" alt="Ícone de Estrela 3">
               <h4>Peles sensíveis</h4>
               <p>Que sofrem com irritações de outros métodos</p>
             </div>
             <div class="publico-card">
-              <span class="p-icon">⭐</span>
+              <img src="assets/icons/icons8-estrela-100.png" alt="Ícone de Estrela 4">
               <h4>Todos os tons</h4>
               <p>Tecnologia segura para diferentes fototipos</p>
             </div>

@@ -190,7 +190,7 @@ p {
   border-radius: 99px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.65rem;
   letter-spacing: 0.04em;
   cursor: pointer;
   border: none;
@@ -249,7 +249,7 @@ p {
 
 /* ── NAV ──────────────────────────────────────────────────── */
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -341,7 +341,6 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, var(--nude) 60%, var(--gold-pale) 100%);
-  padding-top: 72px;
 }
 
 .hero-bg-pattern {
@@ -383,16 +382,17 @@ nav.scrolled {
 }
 
 .hero-content {
-  padding: 80px 5% 80px 8%;
+  padding: 80px 8% 80px 5%;
   position: relative;
   z-index: 2;
+  order: 2; /* texto sempre à direita no desktop */
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(198, 163, 90, 0.12);
+  background: rgba(255, 251, 241, 0.712);
   border: 1px solid rgba(198, 163, 90, 0.3);
   padding: 6px 16px;
   border-radius: 99px;
@@ -412,7 +412,7 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.8rem);
   line-height: 1.1;
   margin-bottom: 24px;
   color: var(--brown);
@@ -423,7 +423,7 @@ nav.scrolled {
 }
 
 .hero-desc {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--text-soft);
   max-width: 460px;
   margin-bottom: 14px;
@@ -433,7 +433,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--brown-light);
   margin-bottom: 40px;
@@ -450,20 +450,38 @@ nav.scrolled {
   align-items: center;
 }
 
+/* ── HERO IMAGE ───────────────────────────────────────────── */
 .hero-image-wrap {
   position: relative;
   height: 100vh;
   min-height: 600px;
+  order: 1; /* imagem sempre à esquerda no desktop */
+}
+.hero-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(245, 237, 228, 0.6) 75%,
+    rgba(245, 237, 228, 1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-image-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    var(--gold-pale) 0%,
-    var(--nude-dark) 100%
-  );
+}
+
+.hero-image-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .hero-image-placeholder {
@@ -503,7 +521,7 @@ nav.scrolled {
 .hero-float-card {
   position: absolute;
   bottom: 64px;
-  left: -36px;
+  right: -20px;
   background: var(--white);
   border-radius: var(--radius);
   padding: 18px 24px;
@@ -596,6 +614,10 @@ nav.scrolled {
   max-width: 180px;
   position: relative;
   z-index: 1;
+}
+
+.sobre-image-bg img {
+  border-radius: 24px;
 }
 
 .sobre-badge-float {
@@ -1167,15 +1189,16 @@ nav.scrolled {
   text-align: center;
   border: 1px solid rgba(198, 163, 90, 0.15);
   transition: var(--transition);
+  text-align: center;
 }
 .publico-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
 }
-.publico-card .p-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  display: block;
+.publico-card img {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
 }
 .publico-card h4 {
   font-size: 0.95rem;
@@ -1273,7 +1296,7 @@ nav.scrolled {
   margin: 0 auto 40px;
 }
 .cta-inner .btn-gold {
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 18px 44px;
 }
 
@@ -1352,7 +1375,7 @@ footer {
 }
 
 footer p {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--gold-pale);
 }
 
@@ -1430,7 +1453,7 @@ footer a {
   display: flex;
   position: fixed;
   inset: 0;
-  background: rgba(245,237,228,0.98);
+  background: rgba(245, 237, 228, 0.98);
   backdrop-filter: blur(12px);
   z-index: 997;
   flex-direction: column;
@@ -1460,36 +1483,83 @@ footer a {
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  /* HERO MOBILE: imagem de fundo, texto sobreposto com fade */
   #hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    padding-top: 0;
+    background: none;
   }
+
+  /* A imagem ocupa o hero inteiro como fundo */
+  .hero-image-wrap {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    min-height: unset;
+    order: unset;
+    z-index: 0;
+  }
+
+  .hero-image-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top center;
+    border-radius: 0;
+  }
+
+  /* Gradiente nude sobre a imagem para legibilidade do texto */
+  .hero-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 237, 228, 0.05) 0%,
+      rgba(245, 237, 228, 0.6) 80%,
+      rgba(245, 237, 228, 0.92) 90%,
+      rgba(245, 237, 228, 0.98) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Texto fica na frente, na parte inferior */
   .hero-content {
-    padding: 120px 5% 60px;
+    position: relative;
+    z-index: 2;
+    padding: 62vh 5% 80px; /* empurra o texto para baixo, abaixo do rosto */
     text-align: center;
+    order: unset;
   }
+
   .hero-desc,
   .hero-location {
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero-actions {
     justify-content: center;
   }
-  .hero-image-wrap {
-    height: 360px;
-  }
+
+  /* Float card some no mobile para não atrapalhar */
   .hero-float-card {
-    left: 50%;
-    transform: translateX(-50%);
-    animation: none;
-    bottom: -24px;
+    display: none;
   }
+
   .hero-circle--1,
   .hero-circle--2 {
     display: none;
   }
 
+  /* Resto do layout tablet */
   .sobre-grid {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1519,7 +1589,7 @@ footer a {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .nav-links,
   .nav-cta {
     display: none;
@@ -1527,12 +1597,17 @@ footer a {
   .hamburger {
     display: flex;
   }
+}
 
+@media (max-width: 768px) {
   .section {
     padding: 72px 0;
   }
-  #hero {
-    padding-top: 0;
+
+  /* Ajuste do padding do texto no hero para telas menores */
+  .hero-content {
+    padding-top: 50vh;
+    padding-bottom: 60px;
   }
 
   .beneficios-grid {
@@ -1568,9 +1643,11 @@ footer a {
   .areas-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .hero-float-card {
-    width: calc(100% - 48px);
-    left: 24px;
-    transform: none;
+
+  .hero-content {
+    padding-top: 35vh;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
