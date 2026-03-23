@@ -221,6 +221,16 @@ p {
   box-shadow: 0 8px 30px rgba(198, 163, 90, 0.5);
 }
 
+.btn-principal-menu {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  box-shadow: 0 4px 20px rgba(198, 163, 90, 0.4);
+}
+
+.btn-principal-menu:hover {
+  transform: translateY(-2px);
+  color: white;
+}
+
 .btn-outline {
   background: transparent;
   border: 1.5px solid var(--gold);
@@ -382,7 +392,7 @@ nav.scrolled {
 }
 
 .hero-content {
-  padding: 80px 8% 80px 5%;
+  padding: 80px 8% 0px 5%;
   position: relative;
   z-index: 2;
   order: 2; /* texto sempre à direita no desktop */
@@ -572,7 +582,7 @@ nav.scrolled {
 /* ── SOBRE ────────────────────────────────────────────────── */
 #sobre {
   background: var(--white);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .sobre-grid {
@@ -697,7 +707,7 @@ nav.scrolled {
 /* ── BENEFÍCIOS ───────────────────────────────────────────── */
 #beneficios {
   background: var(--nude);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .beneficios-grid {
@@ -767,7 +777,7 @@ nav.scrolled {
 /* ── ÁREAS ────────────────────────────────────────────────── */
 #areas {
   background: var(--brown);
-  padding: 100px 0;
+  padding: 56px 0;
   position: relative;
   overflow: hidden;
 }
@@ -846,7 +856,7 @@ nav.scrolled {
 /* ── RESULTADOS ───────────────────────────────────────────── */
 #resultados {
   background: var(--white);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .resultados-grid {
@@ -900,7 +910,7 @@ nav.scrolled {
 /* ── DEPOIMENTOS ──────────────────────────────────────────── */
 #depoimentos {
   background: var(--nude);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .depo-grid {
@@ -993,7 +1003,7 @@ nav.scrolled {
 /* ── LOCAIS ───────────────────────────────────────────────── */
 #locais {
   background: var(--white);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .locais-grid {
@@ -1075,7 +1085,7 @@ nav.scrolled {
 /* ── FAQ ──────────────────────────────────────────────────── */
 #faq {
   background: var(--nude);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .faq-list {
@@ -1163,7 +1173,7 @@ nav.scrolled {
 /* ── PÚBLICO ──────────────────────────────────────────────── */
 #publico {
   background: var(--gold-pale);
-  padding: 80px 0;
+  padding: 56px 0;
 }
 
 .publico-inner {
@@ -1212,7 +1222,7 @@ nav.scrolled {
 /* ── PREÇOS ───────────────────────────────────────────────── */
 #precos {
   background: var(--white);
-  padding: 100px 0;
+  padding: 56px 0;
 }
 
 .precos-note {
@@ -1251,7 +1261,7 @@ nav.scrolled {
 /* ── CTA FINAL ────────────────────────────────────────────── */
 #cta-final {
   background: linear-gradient(135deg, var(--brown) 0%, #3d2412 100%);
-  padding: 100px 0;
+  padding: 56px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1534,7 +1544,7 @@ footer a {
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 62vh 5% 80px; /* empurra o texto para baixo, abaixo do rosto */
+    padding: 62vh 5% 24px; /* empurra o texto para baixo, abaixo do rosto */
     text-align: center;
     order: unset;
   }
@@ -1607,7 +1617,7 @@ footer a {
   /* Ajuste do padding do texto no hero para telas menores */
   .hero-content {
     padding-top: 50vh;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
   }
 
   .beneficios-grid {
@@ -1646,7 +1656,7 @@ footer a {
 
   .hero-content {
     padding-top: 35vh;
-    padding-bottom: 48px;
+    padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
   }
