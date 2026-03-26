@@ -154,12 +154,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ── HERO BADGE PULSE ────────────────────────────────────── */
   const badge = document.querySelector(".hero-badge");
+
   if (badge) {
     setInterval(() => {
-      badge.style.transform = "scale(1.03)";
-      setTimeout(() => (badge.style.transform = "scale(1)"), 200);
-    }, 3000);
+      badge.classList.add("pulse");
+      setTimeout(() => badge.classList.remove("pulse"), 400);
+    }, 2400);
   }
+
 });
 
 /* ── SPARKLE KEYFRAME (inject into head) ─────────────────── */

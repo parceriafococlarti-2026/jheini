@@ -412,7 +412,13 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--gold-dark);
   margin-bottom: 28px;
+  transition: transform 0.4s ease;
 }
+
+.hero-badge.pulse {
+  transform: scale(1.03);
+}
+
 .hero-badge::before {
   content: "";
   width: 6px;
